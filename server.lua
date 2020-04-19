@@ -10,13 +10,13 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
         local identifier = user.getIdentifier()
 		local level = user.getLevel()
         if user.getMoney() >= price then
-            if level >= lvl then
+            --[[if level >= lvl then--]]
                 user.removeMoney(price)
                 data.addItem(_source, name, 100, GetHashKey(weapon))
                 TriggerClientEvent("redemrp_notification:start", source, "Bought Weapon!", 3, "success")
-            else 
+            --[[else 
                 TriggerClientEvent('redemrp_gunshop:alert', source, "You are not a high enough level!")
-            end
+            end--]]
         else
             TriggerClientEvent('redemrp_gunshop:alert', source, "You dont have enough money!")
         end
