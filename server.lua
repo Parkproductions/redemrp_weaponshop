@@ -10,13 +10,15 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
     
     
     TriggerEvent('redemrp:getPlayerFromId', _source, function(user)
-        local player_weight = exports['redemrp_inventory']:checkPlayerWeight(_source)
+
         local identifier = user.getIdentifier()
 		local level = user.getLevel()
         if user.getMoney() >= price then
             --[[if level >= lvl then--]]
                 user.removeMoney(price)
                 data.addItem(_source, name, 100, GetHashKey(weapon))
+                pw = data.checkPlayerWeight(_source, name)
+                print('pw', pw)
                 TriggerClientEvent("redemrp_notification:start", source, "Bought Weapon!", 3, "success")
             --[[else 
                 TriggerClientEvent('redemrp_gunshop:alert', source, "You are not a high enough level!")
