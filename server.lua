@@ -17,7 +17,7 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
             --[[if level >= lvl then--]]
                 user.removeMoney(price)
                 data.addItem(_source, name, 100, GetHashKey(weapon))
-                data.checkPlayerWeight(_source, name)
+                data.checkPlayerWeight(_source)
                 
                 TriggerClientEvent("redemrp_notification:start", source, "Bought Weapon!", 3, "success")
             --[[else 
