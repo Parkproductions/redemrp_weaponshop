@@ -10,7 +10,7 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
     
     
     TriggerEvent('redemrp:getPlayerFromId', _source, function(user)
-        local player_weight = exports['redemrp_inventory']:checkPlayerWeight(source)
+        local player_weight = exports['redemrp_inventory']:checkPlayerWeight(_source)
         local identifier = user.getIdentifier()
 		local level = user.getLevel()
         if user.getMoney() >= price then
