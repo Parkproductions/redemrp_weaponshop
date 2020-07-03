@@ -1,8 +1,8 @@
 local gunsmiths = {
-    { x = -282.28, y = 780.59, z = 118.53 }, --val
-    { x = 2715.9, y = -1285.04, z = 49.63 },  --saint
-    { x = -856.95, y = -1391.59, z = 43.49 }, --blackwater
-    { x = 1323.01, y = -1321.53, z = 77.89 }, --Rhodes
+    { sprite = -145868367, x = -282.28, y = 780.59, z = 118.53 }, --val
+    { sprite = -145868367, x = 2715.9, y = -1285.04, z = 49.63 },  --saint
+    { sprite = -145868367, x = -856.95, y = -1391.59, z = 43.49 }, --blackwater
+    { sprite = -145868367, x = 1323.01, y = -1321.53, z = 77.89 }, --Rhodes
 }
 
 Citizen.CreateThread(function()
@@ -12,7 +12,7 @@ Citizen.CreateThread(function()
         SetBlipScale(blip, 0.2)
         Citizen.InvokeNative(0x9CB1A1623062F402, blip, info.name)
 
-        
+
     end  
 end)
 
