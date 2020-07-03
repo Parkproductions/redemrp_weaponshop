@@ -7,8 +7,8 @@ RegisterServerEvent('redemrp_gunshop:buygun')
 AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
     local _source = tonumber(source)
     
-    data.checkPlayerWeight(_source, name)
-    
+    local pw = data.checkPlayerWeight(_source, name)
+    print('pw', pw)
     TriggerEvent('redemrp:getPlayerFromId', _source, function(user)
 
         local identifier = user.getIdentifier()
