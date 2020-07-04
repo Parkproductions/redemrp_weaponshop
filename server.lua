@@ -26,8 +26,18 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
             TriggerClientEvent('redemrp_gunshop:alert', source, "You dont have enough money!")
         end
     end)
+    
     local pw = data.checkPlayerWeight(_source, name)
-    print('pw', pw, 'source', _source)
+    local iw = data.checkWeight(_source, name)
+    
+    print('pw', pw, 'iw', iw)
+
+    if pw + iw > 50 then 
+        local drop = (pw + iw) - 50
+        print('drop', drop)
+    end
+    
+    
 end)
 
 RegisterServerEvent('redemrp_gunshop:buyammo')
