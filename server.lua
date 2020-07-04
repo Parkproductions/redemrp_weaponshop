@@ -33,6 +33,7 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
     print('pw', pw, 'iw', iw)
 
     if (pw + iw) > 50 then 
+        print('yo mamma')
         local drop = (pw + iw) - 50
         TriggerEvent("rederm_inventory:item:drop", val, amount , hash)
     end
