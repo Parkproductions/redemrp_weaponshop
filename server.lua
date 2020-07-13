@@ -36,7 +36,7 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
         local drop = (pw + iw) - 50
         print('drop', drop)
         TriggerClientEvent('rederm_inventory:item:pickup', source, name, drop, 1)
-        TriggerClientEvent("redemrp_notification:start", source, "You Are Carrying Too Much Weight")
+        TriggerClientEvent("redemrp_gunshop:alert", source, "You Are Carrying Too Much Weight")
         TriggerEvent("rederm_inventory:item:drop", 1, 100 , GetHashKey(weapon))
     end
     
