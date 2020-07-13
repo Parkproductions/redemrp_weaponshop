@@ -18,7 +18,7 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
                 data.addItem(_source, name, 100, GetHashKey(weapon))
                 
                 
-                --[[TriggerClientEvent("redemrp_notification:start", source, "Bought Weapon!", 3, "success")--]]
+                TriggerClientEvent("redemrp_notification:start", source, "Bought Weapon!", 3, "success")
             --[[else 
                 TriggerClientEvent('redemrp_gunshop:alert', source, "You are not a high enough level!")
             end--]]
@@ -34,9 +34,9 @@ AddEventHandler("redemrp_gunshop:buygun", function(name, price, weapon, lvl)
 
     if (pw + iw) > 50 then 
         local drop = (pw + iw) - 50
-        print('drop', drop)
+        print('source', source, '_source', _source)
         TriggerClientEvent('rederm_inventory:item:pickup', source, name, drop, 1)
-        TriggerClientEvent("redemrp_gunshop:alert", source, "You Are Carrying Too Much Weight")
+        TriggerClientEvent("redemrp_notification:start", source, "You Are Carrying Too Much Weight", 3, "success")
         TriggerEvent("rederm_inventory:item:drop", 1, 100 , GetHashKey(weapon))
     end
     
